@@ -1,0 +1,52 @@
+@keyframes white-car-animation {
+  0% {
+    top: -30vh;
+  }
+  100% {
+    top: 120vh;
+  }
+}
+
+@keyframes black-car-animation {
+  0% {
+    top: -60vh;
+  }
+  100% {
+    top: 120vh;
+  }
+}
+
+@keyframes blue-car-animation {
+  0% {
+    top: -70vh;
+  }
+  100% {
+    top: 120vh;
+  }
+}
+
+@keyframes green-car-animation {
+  0% {
+    top: -80vh;
+  }
+  100% {
+    top: 120vh;
+  }
+}
+
+@keyframes road-animation {
+  0% {
+    top: -40vh;
+  }
+  100% {
+    top: 00vh;
+  }
+}
+
+/* #white-car {
+  animation: car-1 5s linear infinite;
+} */
+
+/* #road {
+  animation: road 3s linear infinite;
+} */
