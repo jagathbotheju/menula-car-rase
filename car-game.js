@@ -51,7 +51,7 @@ document.getElementById("start-button").addEventListener("click", function () {
     document.getElementById("blue-car").style.right = `${num}vw`;
   }, 3000);
   document.getElementById("blue-car").style.animation =
-    "blue-car-animation 3s linear infinite";
+    "blue-car-animation 3s infinite";
 
   // green car animation
   setInterval(() => {
@@ -86,44 +86,44 @@ setInterval(() => {
 
   // black car border
   let blackCarLeft = Math.abs(
-    document.getElementById("black-car").getBoundingClientRect().left
+    document.getElementById("black-car").getBoundingClientRect().left + 30
   );
   let blackCarRight = Math.abs(
-    document.getElementById("black-car").getBoundingClientRect().right
+    document.getElementById("black-car").getBoundingClientRect().right - 30
   );
   let blackCarTop = Math.abs(
-    document.getElementById("black-car").getBoundingClientRect().top
+    document.getElementById("black-car").getBoundingClientRect().top + 30
   );
   let blackCarBottom = Math.abs(
-    document.getElementById("black-car").getBoundingClientRect().bottom
+    document.getElementById("black-car").getBoundingClientRect().bottom - 30
   );
 
   // blue car border
   let blueCarLeft = Math.abs(
-    document.getElementById("blue-car").getBoundingClientRect().left
+    document.getElementById("blue-car").getBoundingClientRect().left + 30
   );
   let blueCarRight = Math.abs(
-    document.getElementById("blue-car").getBoundingClientRect().right
+    document.getElementById("blue-car").getBoundingClientRect().right - 30
   );
   let blueCarTop = Math.abs(
-    document.getElementById("blue-car").getBoundingClientRect().top
+    document.getElementById("blue-car").getBoundingClientRect().top + 30
   );
   let blueCarBottom = Math.abs(
-    document.getElementById("blue-car").getBoundingClientRect().bottom
+    document.getElementById("blue-car").getBoundingClientRect().bottom - 30
   );
 
   // green car border
   let greenCarLeft = Math.abs(
-    document.getElementById("green-car").getBoundingClientRect().left
+    document.getElementById("green-car").getBoundingClientRect().left + 30
   );
   let greenCarRight = Math.abs(
-    document.getElementById("green-car").getBoundingClientRect().right
+    document.getElementById("green-car").getBoundingClientRect().right - 30
   );
   let greenCarTop = Math.abs(
-    document.getElementById("green-car").getBoundingClientRect().top
+    document.getElementById("green-car").getBoundingClientRect().top + 30
   );
   let greenCarBottom = Math.abs(
-    document.getElementById("green-car").getBoundingClientRect().bottom
+    document.getElementById("green-car").getBoundingClientRect().bottom - 30
   );
 
   // mycar car border
