@@ -2,6 +2,13 @@ let bottom = 10;
 let left = 50;
 let score = 0;
 
+let roadLeft = Math.floor(
+  document.getElementById("road").getBoundingClientRect().left
+);
+let roadRight = Math.floor(
+  document.getElementById("road").getBoundingClientRect().right
+);
+
 window.addEventListener("keydown", function (e) {
   if (e.key === "ArrowUp") {
     bottom = bottom + 3;
@@ -20,6 +27,7 @@ window.addEventListener("keydown", function (e) {
 document.getElementById("start-button").addEventListener("click", function () {
   document.getElementById("start-button").style.display = "none";
 
+  //score
   setInterval(() => {
     document.getElementById("score").innerText = `Score: ${score}`;
     score = score + 1;
@@ -30,8 +38,11 @@ document.getElementById("start-button").addEventListener("click", function () {
     "road-animation 3s linear infinite";
 
   // white car animation
+  let whiteCarLeft = Math.floor(
+    document.getElementById("white-car").getBoundingClientRect().left
+  );
   setInterval(() => {
-    const num = Math.floor(Math.random() * (35 - 27 + 1) + 27);
+    const num = Math.floor(Math.random() * (25 - 13) + 13);
     document.getElementById("white-car").style.left = `${num}vw`;
   }, 5000);
   document.getElementById("white-car").style.animation =
@@ -39,7 +50,7 @@ document.getElementById("start-button").addEventListener("click", function () {
 
   // black car animation
   setInterval(() => {
-    const num = Math.floor(Math.random() * (50 - 33 + 1) + 33);
+    const num = Math.floor(Math.random() * (43 - 28) + 28);
     document.getElementById("black-car").style.left = `${num}vw`;
   }, 2000);
   document.getElementById("black-car").style.animation =
@@ -47,7 +58,7 @@ document.getElementById("start-button").addEventListener("click", function () {
 
   // blue car animation
   setInterval(() => {
-    const num = Math.floor(Math.random() * (43 - 35 + 1) + 35);
+    const num = Math.floor(Math.random() * (43 - 29) + 29);
     document.getElementById("blue-car").style.right = `${num}vw`;
   }, 3000);
   document.getElementById("blue-car").style.animation =
@@ -55,21 +66,18 @@ document.getElementById("start-button").addEventListener("click", function () {
 
   // green car animation
   setInterval(() => {
-    const num = Math.floor(Math.random() * (34 - 26 + 1) + 26);
+    const num = Math.floor(Math.random() * (25 - 13) + 13);
     document.getElementById("green-car").style.right = `${num}vw`;
   }, 4000);
   document.getElementById("green-car").style.animation =
     "green-car-animation 4s linear infinite";
 });
 
-let myCarLeft = Math.abs(
-  document.getElementById("my-car").getBoundingClientRect().left + 30
+let myCarRight = Math.abs(
+  document.getElementById("my-car").getBoundingClientRect().right - 30
 );
-console.log("myCarLeft:", myCarLeft);
 
 setInterval(() => {
-  let myCarRect = document.getElementById("my-car").getBoundingClientRect();
-
   // white car border
   let whiteCarLeft = Math.abs(
     document.getElementById("white-car").getBoundingClientRect().left + 30
@@ -126,7 +134,7 @@ setInterval(() => {
     document.getElementById("green-car").getBoundingClientRect().bottom - 30
   );
 
-  // mycar car border
+  // my car car border
   let myCarLeft = Math.abs(
     document.getElementById("my-car").getBoundingClientRect().left + 30
   );
@@ -184,7 +192,7 @@ setInterval(() => {
     score = 0;
   }
 
-  if (myCarLeft < 470 || myCarLeft > 1350) {
+  if (myCarLeft < roadLeft || myCarRight > roadRight) {
     alert("Game Over!");
     score = 0;
     left = 50;
